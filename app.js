@@ -16,7 +16,7 @@ Order.all = [];
 
 function Order(item, quantity, name, street, zip, phoneNumber, creditCardNumber) {
   this.item = item;
-  this.path = item + '.jpg';
+  this.path = 'images/' + item + '.jpg';
   this.quantity = quantity;
   this.name = name;
   this.street = street;
@@ -39,6 +39,8 @@ function handleSubmit(e) {
   var creditCardNumber = e.target.credit_card_number.value;
 
   new Order(item, quantity, name, street, zip, phoneNumber, creditCardNumber);
+
+  event.target.reset();
 
   //store in local storage
   localStorage.userOrder = JSON.stringify(Order.all);
