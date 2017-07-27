@@ -1,8 +1,11 @@
 
-#ordersContainer{
+/*#ordersContainer{
   border: 2px solid black;
   height: 400px;
-  width: 600px;
+  width: 600px;*/
+img {
+  height: 200px;
+  width: 200px;
 }
 #completeOrder{
   margin-top: 10px;
