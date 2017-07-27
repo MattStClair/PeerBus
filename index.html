@@ -3,16 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form>
-    <h1> Click on Product </h2>
-      <img >    </img>
+      <fieldset>
+
+        <label for="dropdown" >BusMall products</label>
+        <select id="dropdown"></select>
+
+        <label for="quantity" >Qty</label>
+        <input id="quantity" type="number" />
+
+        <label for="name" >Name</label>
+        <input id="name" type="text" />
+
+        <label for="street" >Street</label>
+        <input id="street" type="text" />
+
+        <label for="city" >City</label>
+        <input id="city" type="text" />
+
+        <label for="state" >State</label>
+        <input id="state" type="text" />
+
+        <label for="zip" >Zip</label>
+        <input id="zip" type="text" />
+
+        <label for="phone_number" >Phone Number</label>
+        <input id="phone_number" type="text" />
+
+        <label for="credit_card_number" >Credit Card Number</label>
+        <input id="credit_card_number" type="number" />
+
+        <button id="add_to_cart">Add to Cart</button>
+        <!-- An input of "type=number" to indicate quantity to purchase
+        Text inputs for each of: name, street, city, state, ZIP code, and phone number
+        An input of "type=number" to enter a 16-digit credit card number
+        A "Add To Cart" button to submit the order. When the order is submitted, all of the input fields should be cleared
+        Of course, there should be appropriate instructions and styling on the page -->
+      </fieldset>
     </form>
-
-<button type="button" >click to add to cart</button>
-
-    <script src="app.js"></script>
   </body>
 </html>

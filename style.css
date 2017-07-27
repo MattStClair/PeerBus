@@ -1,9 +1,23 @@
+
 #ordersContainer{
   border: 2px solid black;
   height: 400px;
   width: 600px;
 }
 #completeOrder{
-  margin-top: 10px; 
+  margin-top: 10px;
+
+}
+form {
+  margin-top: 30px;
+}
+
+form * {
+  display: block;
+}
+
+label {
+  display: inline;
+  float: left;
 
 }
