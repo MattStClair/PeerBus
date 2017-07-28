@@ -1,6 +1,12 @@
 'use strict';
 
-var orderArray = JSON.parse(localStorage.userOrder);
+orderArray = [];
+
+if(localStorage.userOrder) {
+  console.log('Yay local storage!');
+  var orderArray = JSON.parse(localStorage.userOrder);
+}
+
 var container = document.getElementById('ordersContainer');
 
 //var containerList = document.getElementById('userInfo');
