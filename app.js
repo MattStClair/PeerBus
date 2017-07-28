@@ -12,7 +12,13 @@ for(var i = 0; i < names.length; i++) {
   dropdown.appendChild(option);
 }
 
-Order.all = [];
+if(localStorage.userOrder) {
+  console.log('Yay local storage!');
+  Order.all = JSON.parse(localStorage.userOrder);
+} else {
+  console.log('No local storage');
+  Order.all = [];
+}
 
 function Order(item, quantity, name, street, zip, phoneNumber, creditCardNumber) {
   this.item = item;
@@ -33,9 +39,12 @@ function handleChange(e) {
   } else {
     item = e.target.options[e.target.options.selectedIndex].value;
   }
-
   document.getElementById('the_image').src = 'images/' + item + '.jpg';
+}
 
+function handleClick(e) {
+  e.preventDefault();
+  window.location.href = 'cart.html';
 }
 
 function handleSubmit(e) {
@@ -54,6 +63,8 @@ function handleSubmit(e) {
   event.target.reset();
 
   //store in local storage
+  console.log('storing:');
+  console.log(Order.all);
   localStorage.userOrder = JSON.stringify(Order.all);
 
   handleChange(false);
@@ -61,5 +72,6 @@ function handleSubmit(e) {
 
 document.getElementById('form').addEventListener('submit', handleSubmit);
 document.getElementById('dropdown').addEventListener('change', handleChange);
+document.getElementById('pending_orders').addEventListener('click', handleClick);
 
 handleChange(false);

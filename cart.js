@@ -56,16 +56,18 @@ for(var i = 0; i < orderArray.length; i++){
 //
 function removeItem (event) {
   var button = event.target;
-
   for(var i = 0; i < orderArray.length; i++)
   {
     if(button.parentNode.id === orderArray[i].item){
       orderArray.splice(i, 1);
       localStorage.userOrder = JSON.stringify(orderArray);
     }
-
   }
   button.parentNode.parentNode.removeChild(button.parentNode);
-
-
 }
+
+function handleClick() {
+  window.location.href = 'index.html';
+}
+
+document.getElementById('return').addEventListener('click', handleClick);
