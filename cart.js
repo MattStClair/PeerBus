@@ -10,9 +10,22 @@ for(var i = 0; i < orderArray.length; i++){
   var addOrderItem = document.createElement('div');
   addOrderItem.id = orderArray[i].item;
 
+  var but = document.createElement('button');
+  but.textContent = 'X';
+  addOrderItem.appendChild(but);
+
+  var createImage = document.createElement('img');  //create variable for div
+  var path = orderArray[i].path;
+  createImage.src = path;
+  addOrderItem.appendChild(createImage);
+
   var userNameListItem = document.createElement('p');
   userNameListItem.textContent = 'Name: ' + orderArray[i].name;
   addOrderItem.appendChild(userNameListItem);
+
+  var pEl = document.createElement('p'); //create p element in that div
+  pEl.textContent = 'Item: ' + orderArray[i].item; //adds array item in local storage
+  addOrderItem.appendChild(pEl);
 
   var userQuantLi = document.createElement('p');
   userQuantLi.textContent = 'Quantity: ' + orderArray[i].quantity;
@@ -23,7 +36,7 @@ for(var i = 0; i < orderArray.length; i++){
   addOrderItem.appendChild(userStreetLi);
 
   var userZipLi = document.createElement('p');
-  userZipLi.textContent = 'Zipcode is: ' + orderArray[i].zip;
+  userZipLi.textContent = 'Zipcode: ' + orderArray[i].zip;
   addOrderItem.appendChild(userZipLi);
 
   var userPhoneLi = document.createElement('p');
@@ -33,20 +46,6 @@ for(var i = 0; i < orderArray.length; i++){
   var userCardNum = document.createElement('p');
   userCardNum.textContent = 'Card Number: ' + orderArray[i].creditCardNumber;
   addOrderItem.appendChild(userCardNum);
-
-  var createImage = document.createElement('img');  //create variable for div
-  var path = orderArray[i].path;
-  createImage.src = path;
-  addOrderItem.appendChild(createImage);
-
-  var pEl = document.createElement('p'); //create p element in that div
-  pEl.textContent = orderArray[i].item; //adds array item in local storage
-  addOrderItem.appendChild(pEl);
-
-
-  var but = document.createElement('button');
-  but.textContent = 'click to remove item';
-  addOrderItem.appendChild(but);
 
   but.addEventListener('click', removeItem);
   container.appendChild(addOrderItem);
@@ -69,4 +68,4 @@ function removeItem (event) {
   button.parentNode.parentNode.removeChild(button.parentNode);
 
 
- }
+}

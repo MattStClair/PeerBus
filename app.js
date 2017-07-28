@@ -55,6 +55,8 @@ function handleSubmit(e) {
 
   //store in local storage
   localStorage.userOrder = JSON.stringify(Order.all);
+
+  handleChange(false);
 }
 
 document.getElementById('form').addEventListener('submit', handleSubmit);

@@ -1,26 +1,8 @@
-
-/*#ordersContainer{
-  border: 2px solid black;
-  height: 400px;
-  width: 600px;*/
-
   /*font-family: 'Zilla Slab Highlight', cursive;
 font-family: 'Arvo', serif;
 font-family: 'Lobster', cursive;
 font-family: 'Indie Flower', cursive;*/
-img {
-  height: 200px;
-  width: 200px;
-}
 
-li{
-  text-decoration: none;
-}
-
-#completeOrder{
-  margin-top: 10px;
-
-}
 form {
   width: 960px;
   margin: 0px auto;
@@ -81,12 +63,20 @@ input[type="number"] {
 }
 
 fieldset button {
+    margin: 0px auto;
     margin-top: 20px;
     width: 200px;
     height: 75px;
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
+    transition: 1s;
+    cursor: pointer;
 }
+
+fieldset button:hover {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
 
 select {
   width: 250px;
