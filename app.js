@@ -26,6 +26,17 @@ function Order(item, quantity, name, street, zip, phoneNumber, creditCardNumber)
   Order.all.push(this);
 }
 
+function handleChange(e) {
+  var item;
+  if(!e) {
+    item = document.getElementById('dropdown').options[0].value;
+  } else {
+    item = e.target.options[e.target.options.selectedIndex].value;
+  }
+
+  document.getElementById('the_image').src = 'images/' + item + '.jpg';
+
+}
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -47,3 +58,6 @@ function handleSubmit(e) {
 }
 
 document.getElementById('form').addEventListener('submit', handleSubmit);
+document.getElementById('dropdown').addEventListener('change', handleChange);
+
+handleChange(false);
